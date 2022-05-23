@@ -9,7 +9,7 @@ namespace Test_Tecnico_MVC___Web_API.Models
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Il campo è obbligatorio")]
-        public string Nome { get; set; }
+        public string Name { get; set; }
 
         [Column(TypeName=  "text")]
         [Required(ErrorMessage = "Il campo è obbligatorio")]
@@ -30,9 +30,9 @@ namespace Test_Tecnico_MVC___Web_API.Models
 
         public PacchettoViaggio() { }
 
-        public PacchettoViaggio(string nome, string descrizione, string destinazione, double prezzo, string image, int durata)
+        public PacchettoViaggio(string name, string descrizione, string destinazione, double prezzo, string image, int durata)
         {
-            Nome = nome;
+            Name = name;
             Descrizione = descrizione;
             Destinazione = destinazione;
             Prezzo = prezzo;
