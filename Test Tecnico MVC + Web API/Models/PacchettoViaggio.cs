@@ -13,31 +13,31 @@ namespace Test_Tecnico_MVC___Web_API.Models
 
         [Column(TypeName=  "text")]
         [Required(ErrorMessage = "Il campo è obbligatorio")]
-        public string Descrizione { get; set; }
+        public string Description { get; set; }
 
         [Required(ErrorMessage = "Il campo è obbligatorio")]
-        public string Destinazione { get; set; }
+        public string Destination { get; set; }
 
         [Required(ErrorMessage = "Il campo è obbligatorio")]
-        public double Prezzo { get; set; }
+        public double Price { get; set; }
 
         [Required(ErrorMessage = "Il campo è obbligatorio")]
         public string Image { get; set; }
 
         [Required(ErrorMessage = "Il campo è obbligatorio")]
-        public int Durata { get; set; }
+        public int Duration { get; set; }
 
 
         public PacchettoViaggio() { }
 
-        public PacchettoViaggio(string name, string descrizione, string destinazione, double prezzo, string image, int durata)
+        public PacchettoViaggio(string name, string description, string destination, double price, string image, int duration)
         {
             Name = name;
-            Descrizione = descrizione;
-            Destinazione = destinazione;
-            Prezzo = prezzo;
+            Description = description;
+            Destination = destination;
+            Price = price;
             Image = image;
-            Durata = durata;
+            Duration = duration;
         }
     }
 }

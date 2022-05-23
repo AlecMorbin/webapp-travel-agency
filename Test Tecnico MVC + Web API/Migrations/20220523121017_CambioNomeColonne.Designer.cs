@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Test_Tecnico_MVC___Web_API.Data;
 
@@ -10,9 +11,10 @@ using Test_Tecnico_MVC___Web_API.Data;
 namespace Test_Tecnico_MVC___Web_API.Migrations
 {
     [DbContext(typeof(AgenziaContext))]
-    partial class AgenziaContextModelSnapshot : ModelSnapshot
+    [Migration("20220523121017_CambioNomeColonne")]
+    partial class CambioNomeColonne
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

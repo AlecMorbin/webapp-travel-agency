@@ -1,0 +1,30 @@
+﻿@model PacchettoViaggio
+
+<div class="container rounded bg-light">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="d-flex align-items-center">
+                <h1 class="mb-3 mt-3">Informazioni</h1>
+            </div>
+            <div>
+                <img src="@Model.Image" alt="@Model.Name"/>
+                <p>
+                    <strong>Nome</strong>
+                    @Model.Name
+                </p>
+                <p>
+                    <strong>Destinazione</strong>
+                    @Model.Destination
+                </p>
+                <p>
+                    <strong>Nome</strong>
+                    @Model.Description
+                </p>
+                <p>
+                    <strong>Nome</strong>
+                    @Model.Price
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
