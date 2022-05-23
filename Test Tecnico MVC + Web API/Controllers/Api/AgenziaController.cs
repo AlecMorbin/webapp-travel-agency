@@ -12,13 +12,22 @@ namespace Test_Tecnico_MVC___Web_API.Controllers.Api
     public class AgenziaController : ControllerBase
     {
         [HttpGet]
-        public IActionResult Get()
+        public IActionResult Get(string? search)
         {
             List<PacchettoViaggio> listaViaggi = new();
 
             using (AgenziaContext db= new AgenziaContext())
             {
-                listaViaggi = db.Viaggi.ToList<PacchettoViaggio>();
+                if(!String.IsNullOrEmpty(search))
+                {
+                    listaViaggi = db.Viaggi.Where(viaggio => viaggio.Name.Contains(search) ||
+                                                    viaggio.Description.Contains(search) ||
+                                                    viaggio.Destination.Contains(search)).ToList<PacchettoViaggio>();
+                }
+                else
+                {
+                    listaViaggi = db.Viaggi.ToList<PacchettoViaggio>();
+                }
             }
             return Ok(listaViaggi);
         }
