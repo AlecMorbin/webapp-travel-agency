@@ -31,7 +31,7 @@
         document.getElementById('search_input').addEventListener('keyup',search);
 
         function redirectToDetails(id){
-            window.location.href=`/Agenzia/Details/${id}`;
+            window.location.href=`/Home/Details/${id}`;
             console.log(id);
         }
 
@@ -64,7 +64,6 @@
 
                     result.data.forEach(viaggio => {
                         console.log(result.data);
-                        var i=0;
                         document.getElementById('print').innerHTML += 
                             `
                            <div class="col-sm-3 ms-3 me-3">
@@ -85,7 +84,6 @@
                               </div>
                             </div>
                             `
-
                     });
                 }
 

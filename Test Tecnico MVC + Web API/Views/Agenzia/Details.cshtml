@@ -1,33 +1,35 @@
 ﻿@model PacchettoViaggio
 
-<div class="container rounded bg-light">
+<div class="container rounded bg-light mt-5">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 ms-5 mb-3 mt-2">
             <div class="d-flex align-items-center">
-                <h1 class="mb-3 mt-3">Informazioni</h1>
+                <span class="mb-3 mt-3 fs-1"><strong>Informazioni</strong></span>
             </div>
-            <div>
+            <div class="fs-4">
+                <div id="Image" class="mb-1">
                 <img src="@Model.Image" alt="@Model.Name"/>
-                <p>
-                    <strong>Nome</strong>
+                </div>
+                <div class="mb-1">
+                    <strong>Nome: </strong>
                     @Model.Name
-                </p>
-                <p>
-                    <strong>Destinazione</strong>
+                </divc>
+                <div class="mb-1">
+                    <strong>Destinazione: </strong>
                     @Model.Destination
-                </p>
-                <p>
-                    <strong>Descrizione</strong>
+                </div>
+                <div class="mb-1">
+                    <strong>Descrizione: </strong>
                     @Model.Description
-                </p>
-                <p>
-                    <strong>Durata</strong>
+                </div>
+                <div class="mb-1">
+                    <strong>Durata: </strong>
                     @Model.Duration giorni
-                </p>
-                <p>
-                    <strong>Prezzo</strong>
+                </div>
+                <div class="mb-1">
+                    <strong>Prezzo:</strong>
                     @Model.Price &euro; /Persona
-                </p>
+                </div>
             </div>
         </div>
     </div>
