@@ -28,7 +28,12 @@
 
     <script type="text/javascript">
 
-        document.getElementById('search_input').addEventListener('keyup',search)
+        document.getElementById('search_input').addEventListener('keyup',search);
+
+        function redirectToDetails(id){
+            window.location.href=`/Agenzia/Details/${id}`;
+            console.log(id);
+        }
 
         search();
 
@@ -59,11 +64,11 @@
 
                     result.data.forEach(viaggio => {
                         console.log(result.data);
-
+                        var i=0;
                         document.getElementById('print').innerHTML += 
                             `
                            <div class="col-sm-3 ms-3 me-3">
-                              <div class="card shadow">
+                              <div onclick="redirectToDetails(${viaggio.id})" class="card shadow">
                                 <img src="${viaggio.image}" alt="${viaggio.name}" class="img-fluid">
                                 <div class="bg-success text-light fs-5 text-uppercase pt-1 pb-1 card-title">
                                   ${viaggio.name}
@@ -80,6 +85,7 @@
                               </div>
                             </div>
                             `
+
                     });
                 }
 
@@ -89,6 +95,6 @@
 
             });
         }
-    
+
     </script>
 }
