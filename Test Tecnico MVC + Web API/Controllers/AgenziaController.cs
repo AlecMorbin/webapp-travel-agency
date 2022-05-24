@@ -23,14 +23,18 @@ namespace Test_Tecnico_MVC___Web_API.Controllers
         [HttpGet]
         public IActionResult Details(int id)
         {
+            PackageMessage? detailsMessages = new();
             using(AgenziaContext db = new AgenziaContext())
             {
                 Package? pacchetto = db.Viaggi.Where(pacchetto => pacchetto.Id == id).FirstOrDefault();
-                if (pacchetto != null)
-                    return View(pacchetto);
-                else
-                    return NotFound("Non ci sono informazioni riguardo questo pacchetto");
+                List<MessageOb> messages = db.Messages.Where(message => message.PackageId==id).ToList();
+                detailsMessages.Package = pacchetto;
+                detailsMessages.Messages = messages;
             }
+            if (detailsMessages != null)
+                return View(detailsMessages);
+            else
+                return NotFound("Non ci sono informazioni riguardo questo pacchetto");
         }
 
         [HttpGet]

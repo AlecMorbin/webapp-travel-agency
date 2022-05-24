@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace Test_Tecnico_MVC___Web_API.Models
 {
@@ -27,6 +28,7 @@ namespace Test_Tecnico_MVC___Web_API.Models
         [Required(ErrorMessage = "Il campo è obbligatorio")]
         public int Duration { get; set; }
 
+        [JsonIgnore]
         public List<MessageOb> messages { get; set; }
 
         public Package() { }
