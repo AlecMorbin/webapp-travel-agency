@@ -31,10 +31,28 @@
             </div>
         </div>
     </div>
+    <div class="row mt-5 ">
+        <div class="col-md-9 mx-auto">
+            <div>
+                <span class="fs-1"><strong>Contattaci!</strong></span>
+            </div>
+            <div>
+                <form id="form" onsubmit="preventDefault();">
+                    <label class="form-label" for="user_name">Nome</label><input class="form-control" id="user_name" type="text" /> <br />
+                    <label class="form-label" for="user_surname">Cogome</label><input class="form-control" id="user_surname" type="text" /> <br />
+                    <label class="form-label" for="user_message">Messaggio</label><br /><textarea class="form-control" id="user_message"></textarea> <br />
+                    <button class="btn btn-success" onclick="send()">Invia</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 
 @section Scripts{
     <script type="text/javascript">
+        document.getElementById('form').addEventListener("click",function(event){
+            event.preventDefault()
+        });
 
        var url = window.location.pathname;
        var id = url.substring(url.lastIndexOf('/') + 1);
@@ -62,5 +80,28 @@
             });
         }
 
+
+        function send(){
+            var name = document.getElementById('user_name');
+            var surname = document.getElementById('user_surname');
+            var message = document.getElementById('user_message');
+
+
+
+            var data = {
+                packageId : id,
+                name : name.value,
+                surname : surname.value,
+                message : message.value
+            }
+
+            axios.post('/api/Agenzia/Message',data);
+            console.log(data);
+
+            name.value ="";
+            surname.value ="";
+            message.value ="";
+
+        }
     </script>
 }

@@ -10,7 +10,7 @@ namespace Test_Tecnico_MVC___Web_API.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            List<PacchettoViaggio> agenziaList = new();
+            List<Package> agenziaList = new();
 
             using (AgenziaContext db = new AgenziaContext())
             {
@@ -25,7 +25,7 @@ namespace Test_Tecnico_MVC___Web_API.Controllers
         {
             using(AgenziaContext db = new AgenziaContext())
             {
-                PacchettoViaggio? pacchetto = db.Viaggi.Where(pacchetto => pacchetto.Id == id).FirstOrDefault();
+                Package? pacchetto = db.Viaggi.Where(pacchetto => pacchetto.Id == id).FirstOrDefault();
                 if (pacchetto != null)
                     return View(pacchetto);
                 else
@@ -36,11 +36,11 @@ namespace Test_Tecnico_MVC___Web_API.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            return View(new PacchettoViaggio());
+            return View(new Package());
         }
 
         [HttpPost]
-        public IActionResult Create(PacchettoViaggio data)
+        public IActionResult Create(Package data)
         {
             if (!ModelState.IsValid)
             {
@@ -59,7 +59,7 @@ namespace Test_Tecnico_MVC___Web_API.Controllers
         [HttpGet]
         public IActionResult Update(int id)
         {
-            PacchettoViaggio? viaggioToEdit = null;
+            Package? viaggioToEdit = null;
 
             using(AgenziaContext db = new AgenziaContext())
             {
@@ -78,7 +78,7 @@ namespace Test_Tecnico_MVC___Web_API.Controllers
         {
             using (AgenziaContext db = new AgenziaContext())
             {
-                PacchettoViaggio? viaggio = db.Viaggi.Where(viaggio => viaggio.Id == id).FirstOrDefault();
+                Package? viaggio = db.Viaggi.Where(viaggio => viaggio.Id == id).FirstOrDefault();
 
                 if (viaggio != null)
                 {

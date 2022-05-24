@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Test_Tecnico_MVC___Web_API.Models
 {
-    public class PacchettoViaggio
+    public class Package
     {
         [Key]
         public int Id { get; set; }
@@ -27,10 +27,11 @@ namespace Test_Tecnico_MVC___Web_API.Models
         [Required(ErrorMessage = "Il campo è obbligatorio")]
         public int Duration { get; set; }
 
+        public List<MessageOb> messages { get; set; }
 
-        public PacchettoViaggio() { }
+        public Package() { }
 
-        public PacchettoViaggio(string name, string description, string destination, double price, string image, int duration)
+        public Package(string name, string description, string destination, double price, string image, int duration)
         {
             Name = name;
             Description = description;

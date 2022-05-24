@@ -5,7 +5,8 @@ namespace Test_Tecnico_MVC___Web_API.Data
 {
     public class AgenziaContext : DbContext
     {
-        public DbSet<PacchettoViaggio> Viaggi { get; set; }
+        public DbSet<Package> Viaggi { get; set; }
+        public DbSet<MessageOb> Messages { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
